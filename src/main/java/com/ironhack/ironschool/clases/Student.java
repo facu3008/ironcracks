@@ -15,10 +15,11 @@ public class Student {
     private Course course;
 
     public Student(String name, String address, String email) {
+        this.studentId = UUID.randomUUID().toString();
         this.name = name;
         this.address = address;
         this.email = email;
-        this.studentId = UUID.randomUUID().toString();
+
     }
 
     public String getName() {
