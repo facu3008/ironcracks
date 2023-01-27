@@ -1,7 +1,10 @@
 package com.ironhack.ironschool.clases;
 
+import java.util.UUID;
+
 public class Student {
 
+    private final String studentId;
     private String studentID;
     private String name;
 
@@ -15,10 +18,19 @@ public class Student {
         this.name = name;
         this.address = address;
         this.email = email;
+        this.studentId = UUID.randomUUID().toString();
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
 
     public void setName(String name) {

@@ -37,9 +37,9 @@ public class Main {
             teachersMap.put(teacher.getTeacherId(), teacher);
         }
 
+
+
         System.out.println("Cuantos cursos quieres dar en la escuela? ");
-
-
         int courseQuant  = scanner.nextInt();
         scanner.nextLine();
         for (int i = 0; i<courseQuant; i++ ){
@@ -48,6 +48,11 @@ public class Main {
             System.out.println("Introduce el precio del curso: ");
             BigDecimal coursePrice = scanner.nextBigDecimal();
             scanner.nextLine();
+
+            Course course= new Course(courseName,coursePrice);
+            courseMap.put(course.getCourseId(), course);
+
+
         }
 
         System.out.println("Cuantos alumnos asisten la escuela? ");
@@ -60,6 +65,9 @@ public class Main {
             String studentAddress  = scanner.nextLine();
             System.out.println("Introduce el email del estudiante: ");
             String studentEmail  = scanner.nextLine();
+
+            Student student= new Student(studentName,studentAddress,studentEmail);
+            studentMap.put(student.getStudentID(), student);
         }
 
     }
