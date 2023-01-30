@@ -1,20 +1,21 @@
 package com.ironhack.ironschool.clases;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Course {
 
     private String courseId;
     private String name;
-
     private BigDecimal price;
     private BigDecimal money_earned;
     private Teacher teacher;
 
     public Course(String name, BigDecimal price) {
+        this.courseId = UUID.randomUUID().toString();;
         this.name = name;
         this.price = price;
-        this.courseId = courseId;
+
     }
 
     public String getName() {
@@ -40,7 +41,19 @@ public class Course {
     public void setCourseId(String courseId) {
         this.courseId = courseId;
     }
-//    This class will have:
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId='" + courseId + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", money_earned=" + money_earned +
+                ", teacher=" + teacher +
+                '}';
+    }
+
+    //    This class will have:
 //
 //    Variable called courseId of data type string, auto-generated (Private member)
 //    Variable called name of data type string (Private member)
