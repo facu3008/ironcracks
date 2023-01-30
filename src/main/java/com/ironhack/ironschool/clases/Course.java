@@ -12,7 +12,8 @@ public class Course {
     private Teacher teacher;
 
     public Course(String name, BigDecimal price) {
-        this.courseId = UUID.randomUUID().toString();;
+        this.courseId = UUID.randomUUID().toString();
+        ;
         this.name = name;
         this.price = price;
 
@@ -44,15 +45,17 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "Course info: " +
                 "courseId='" + courseId + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", money_earned=" + money_earned +
-                ", teacher=" + teacher +
-                '}';
+                ", teacher=" + teacher + ".";
     }
 
+
+
+}
     //    This class will have:
 //
 //    Variable called courseId of data type string, auto-generated (Private member)
@@ -64,4 +67,4 @@ public class Course {
 //    Public Getter functions to access these variables
 //    Public Setter functions to change these variables
 //    Optional attributes are accepted if needed based on the code structure
-}
+

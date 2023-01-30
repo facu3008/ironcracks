@@ -5,7 +5,6 @@ import java.util.UUID;
 public class Student {
 
     private final String studentId;
-    private String studentID;
     private String name;
 
     private String address;
@@ -26,12 +25,8 @@ public class Student {
         return name;
     }
 
-    public String getStudentID() {
-        return studentID;
-    }
-
-    public void setStudentID(String studentID) {
-        this.studentID = studentID;
+    public String getStudentId() {
+        return studentId;
     }
 
     public void setName(String name) {
@@ -53,6 +48,18 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId='" + studentId + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", course=" + course +
+                '}';
+    }
+
     //    Variable called studentId of data type string, auto-generated (Private member)
 //    Variable called name of data type string (Private member)
 //    Variable called address of data type string (Private member)
