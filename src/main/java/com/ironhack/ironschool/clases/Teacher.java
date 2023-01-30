@@ -1,6 +1,7 @@
 package com.ironhack.ironschool.clases;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Teacher {
     private String teacherId;
@@ -10,6 +11,7 @@ public class Teacher {
     public Teacher(String name, BigDecimal salary) {
         this.name = name;
         this.salary = salary;
+        this.teacherId = UUID.randomUUID().toString();
     }
 
     public String getName() {
@@ -22,6 +24,14 @@ public class Teacher {
 
     public BigDecimal getSalary() {
         return salary;
+    }
+
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
     }
 
     public void setSalary(BigDecimal salary) {
