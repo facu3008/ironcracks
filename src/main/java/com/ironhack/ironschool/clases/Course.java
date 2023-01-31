@@ -43,6 +43,22 @@ public class Course {
         this.courseId = courseId;
     }
 
+    public BigDecimal getMoney_earned() {
+        return money_earned;
+    }
+
+    public void setMoney_earned(BigDecimal money_earned) {
+        this.money_earned = money_earned;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
     @Override
     public String toString() {
         return "Course info: " +
@@ -52,7 +68,6 @@ public class Course {
                 ", money_earned=" + money_earned +
                 ", teacher=" + teacher + ".";
     }
-
 
 
 }

@@ -18,6 +18,7 @@ public class Main {
         Map<String, Course> courseMap = new HashMap<>();
 
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Introduce el nombre de la escuela: ");
         String schoolName  = scanner.nextLine();
 

@@ -7,6 +7,8 @@ import com.ironhack.ironschool.clases.Teacher;
 import java.util.Map;
 import java.util.Scanner;
 
+import static com.ironhack.ironschool.utils.AssignMethod.assignMethod;
+
 public class Commands {
     public static void insertCommand(Map<String, Teacher> teachersMap, Map<String, Student> studentMap, Map<String, Course> courseMap) {
 
@@ -17,30 +19,41 @@ public class Commands {
 
             //WHILE
             switch (command) {
-                case "ENROLL":
+                case "1-ENROLL":
+
                     break;
-                case "ASSIGN":
+                case "2-ASSIGN":
+                    assignMethod(teachersMap,courseMap);
                     break;
-                case "SHOW COURSES":
+                case "3-SHOW COURSES":
                     courseMap.forEach((key, value) -> System.out.println(value.getName()));
                     break;
-                case "LOOKUP COURSE":
-                    courseMap.forEach((key, value) -> System.out.println(value));
-                    // BUSQUEDA A TRAVES DE ID
+                case "4-LOOKUP COURSE":
+                    System.out.println("Introduce la ID del curso: ");
+                   // courseMap.forEach((key,value) -> System.out.println(value.getCourseId())); // para tener la id (provisional)
+                    String courseId = scanner.nextLine();
+                    courseMap.forEach((key, value) -> { if(value.getCourseId().equals(courseId)){
+                        System.out.println(value);}
+                    });
+                    // BUSQUEDA A TRAVES DE ID (WORKS)
                     break;
-                case "SHOW STUDENTS":
-                    studentMap.forEach((key, value) -> System.out.println(value.getName()));
-                    // SOLO DEVUELVE EL ULTIMO VALOR AÑADIDO *REVISAR*
+                case "5-SHOW STUDENTS":
+                    studentMap.forEach((key, value) -> System.out.println(value.getName()+value.getStudentId()));
                     break;
-                case "LOOKUP STUDENTS":
+                case "6-LOOKUP STUDENTS":
                     studentMap.forEach((key,value)->
                      System.out.println(value));
                     break;
-                case "SHOW TEACHER":
+                case "7-SHOW TEACHER":
+                    teachersMap.forEach((key, value) -> System.out.println(value.getName() + value.getTeacherId()));
                     break;
-                case "LOOKUP TEACHER":
+                case "8-LOOKUP TEACHER":
+                   String teacherId = scanner.nextLine();
+                    courseMap.forEach((key, value) -> { if(value.getCourseId().equals(teacherId)){
+                        System.out.println(value);}
+                    });
                     break;
-                case "SHOW PROFIT":
+                case "9-SHOW PROFIT":
                     break;
                 default:
                     System.out.println("WTF");
