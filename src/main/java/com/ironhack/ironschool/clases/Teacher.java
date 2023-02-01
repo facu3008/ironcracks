@@ -12,6 +12,7 @@ public class Teacher {
         this.name = name;
         this.salary = salary;
         this.teacherId = UUID.randomUUID().toString();
+
     }
 
     public String getName() {
@@ -37,6 +38,16 @@ public class Teacher {
     public void setSalary(BigDecimal salary) {
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacherId='" + teacherId + '\'' +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
     //    Teacher class
 //
 //    This class will have:
