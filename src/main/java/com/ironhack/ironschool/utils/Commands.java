@@ -11,24 +11,38 @@ import static com.ironhack.ironschool.utils.AssignMethod.assignMethod;
 
 public class Commands {
     public static void insertCommand(Map<String, Teacher> teachersMap, Map<String, Student> studentMap, Map<String, Course> courseMap) {
+       Scanner scanner = new Scanner(System.in);
+       System.out.println("Introduce un comando:");
+       String command;
+      
+        do{
+            System.out.println(" Bienvenido al menu de Consultas  Basicas \n" +
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce un comando:");
-        String command = scanner.nextLine();
-
-
-            //WHILE
+                    " 1: ENROLL - 2: ASSIGN - 3: SHOW COURSE - 4: LOOKUP COURSE \n" +
+                    " 5: SHOW STUDENTS - 6: LOOKUP STUDENTS - 7: SHOW TEACHER - " +
+                    "8: LOOKUP TEACHER - 9: SHOW PROFIT  -10: EXIT PROGRAM ") ;
+            System.out.println("Por Favor digite la opcion: ");
+            command = scanner.nextLine();
+              
+             
             switch (command) {
-                case "1-ENROLL":
-
+                // ENROLL
+                case "1":
+              System.out.println("Comando prueba 1");
                     break;
-                case "2-ASSIGN":
+                
+                // ASSIGN
+                case "2":
                     assignMethod(teachersMap,courseMap);
                     break;
-                case "3-SHOW COURSES":
+                
+                // SHOW COURSES
+                case "3":
                     courseMap.forEach((key, value) -> System.out.println(value.getName()));
                     break;
-                case "4-LOOKUP COURSE":
+                
+                // LOOKUP COURSE
+                case "4":
                     System.out.println("Introduce la ID del curso: ");
                    // courseMap.forEach((key,value) -> System.out.println(value.getCourseId())); // para tener la id (provisional)
                     String courseId = scanner.nextLine();
@@ -37,29 +51,46 @@ public class Commands {
                     });
                     // BUSQUEDA A TRAVES DE ID (WORKS)
                     break;
-                case "5-SHOW STUDENTS":
+                
+                // SHOW STUDENTS
+                case "5":
                     studentMap.forEach((key, value) -> System.out.println(value.getName()+value.getStudentId()));
                     break;
-                case "6-LOOKUP STUDENTS":
+                
+                // LOOKUP STUDENTS
+                case "6":
                     studentMap.forEach((key,value)->
-                     System.out.println(value));
+                            System.out.println(value));
                     break;
-                case "7-SHOW TEACHER":
-                    teachersMap.forEach((key, value) -> System.out.println(value.getName() + value.getTeacherId()));
+               
+               // SHOW TEACHER
+                case "7":
+                    System.out.println("Comando prueba 7");
                     break;
-                case "8-LOOKUP TEACHER":
-                   String teacherId = scanner.nextLine();
-                    courseMap.forEach((key, value) -> { if(value.getCourseId().equals(teacherId)){
-                        System.out.println(value);}
-                    });
+
+               // LOOKUP TEACHER
+                case "8":
+                    System.out.println("Comando prueba 8");
                     break;
-                case "9-SHOW PROFIT":
+               
+               // SHOW PROFIT
+                case "9":
+                    System.out.println("Comando prueba 1");
                     break;
+                
+                case "10":
+                    System.out.println("Usted ha decidido no consultar data");
+                    break;
+                
                 default:
-                    System.out.println("WTF");
+                    System.out.println("OPCION INVALIDA");
                     break;
             }
+        } while (!command.equals("10"));
+        System.out.println("Consulta Finalizada");
+
     }
+
 
 }
 
