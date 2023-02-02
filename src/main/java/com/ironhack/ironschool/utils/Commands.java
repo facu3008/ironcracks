@@ -10,6 +10,9 @@ import java.util.Scanner;
 import static com.ironhack.ironschool.methods.Assign.assign;
 import static com.ironhack.ironschool.methods.Enroll.enroll;
 import static com.ironhack.ironschool.methods.LookupCourse.lookupCourse;
+import static com.ironhack.ironschool.methods.LookupStudent.lookupStudent;
+import static com.ironhack.ironschool.methods.LookupTeacher.lookupTeacher;
+import static com.ironhack.ironschool.methods.ShowProfit.showProfit;
 
 
 public class Commands {
@@ -19,7 +22,7 @@ public class Commands {
        String command;
       
         do{
-            System.out.println(" Bienvenido al menu de Consultas  Basicas \n" +
+            System.out.println(" Bienvenido al menu de Consultas  Básicas \n" +
                     " 1: ENROLL \t\t\t 2: ASSIGN \t\t\t 3: SHOW COURSE \n " +
                     "4: LOOKUP COURSE \t 5: SHOW STUDENTS \t 6: LOOKUP STUDENTS \n " +
                     "7: SHOW TEACHER \t 8: LOOKUP TEACHER \t 9: SHOW PROFIT \n " +
@@ -43,21 +46,17 @@ public class Commands {
                 // SHOW STUDENTS
                 case "5" -> studentMap.forEach((key, value) -> System.out.println(value.getName()));
 
+                // LOOKUP STUDENT
+                case "6" -> lookupStudent(studentMap);
 
-                // LOOKUP STUDENTS
-                case "6" -> System.out.println("Comando prueba 6");
-
-
-                // SHOW TEACHER
-                case "7" -> System.out.println("Comando prueba 7");
-
+                // SHOW TEACHERS
+                case "7" -> teachersMap.forEach((key, value) -> System.out.println(value.getName()));
 
                 // LOOKUP TEACHER
-                case "8" -> System.out.println("Comando prueba 8");
-
+                case "8" -> lookupTeacher(teachersMap);
 
                 // SHOW PROFIT
-                case "9" -> System.out.println("Comando prueba 9");
+                case "9" -> showProfit(courseMap, teachersMap);
 
 
                 case "10" -> System.out.println("Consulta Finalizada");
