@@ -13,10 +13,9 @@ public class Course {
 
     public Course(String name, BigDecimal price) {
         this.courseId = UUID.randomUUID().toString();
-        ;
         this.name = name;
         this.price = price;
-
+        this.money_earned = new BigDecimal(0);
     }
 
     public String getName() {
@@ -57,14 +56,6 @@ public class Course {
 
     public void setMoney_earned(BigDecimal money_earned) {
         this.money_earned = money_earned;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
     }
 
     @Override
