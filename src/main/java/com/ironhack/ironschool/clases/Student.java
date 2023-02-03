@@ -18,7 +18,15 @@ public class Student {
         this.name = name;
         this.address = address;
         this.email = email;
+    }
 
+    // Constructor utilizado en Tests
+    public Student(String studentId, String name, String address, String email, Course course) {
+        this.studentId = studentId;
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.course = course;
     }
 
     public String getName() {

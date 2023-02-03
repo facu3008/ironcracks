@@ -18,6 +18,15 @@ public class Course {
         this.money_earned = new BigDecimal(0);
     }
 
+    // Constructor para Tests
+    public Course(String courseId, String name, BigDecimal price, BigDecimal money_earned, Teacher teacher) {
+        this.courseId = courseId;
+        this.name = name;
+        this.price = price;
+        this.money_earned = money_earned;
+        this.teacher = teacher;
+    }
+
     public String getName() {
         return name;
     }

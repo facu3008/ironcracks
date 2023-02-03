@@ -1,24 +1,26 @@
 package com.ironhack.ironschool.methods;
 
-import com.ironhack.ironschool.clases.Student;
 import com.ironhack.ironschool.clases.Teacher;
-
 import java.util.Map;
-import java.util.Scanner;
 
 public class LookupTeacher {
-    public static void lookupTeacher(Map<String, Teacher> teacherMap){
+    public static Teacher lookupTeacher(Map<String, Teacher> teacherMap, String teacherId){
 
-        Scanner scanner = new Scanner(System.in);
+        Teacher foundTeacher = null;
 
-        System.out.println("Introduce la ID del profesor: ");
-        teacherMap.forEach((key, value) -> System.out.println(value.getTeacherId()));
-        String teacherId = scanner.nextLine();
-
-        teacherMap.forEach((key, value) -> {
-            if (value.getTeacherId().equals(teacherId)) {
-                System.out.println(value);
+            if (teacherMap == null) {
+                throw new IllegalArgumentException("No hay profesores registrados");
             }
-        });
+            for (Map.Entry<String, Teacher> entry : teacherMap.entrySet()) {
+                Teacher currentTeacher = entry.getValue();
+                if (currentTeacher.getTeacherId().equals(teacherId)) {
+                    foundTeacher = currentTeacher;
+                    break;
+                }
+            }
+        if (foundTeacher == null) {
+            System.out.println("El profesor especificado no existe");
+        }
+        return foundTeacher;
     }
 }

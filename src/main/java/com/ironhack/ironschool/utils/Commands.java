@@ -13,6 +13,9 @@ import static com.ironhack.ironschool.methods.LookupCourse.lookupCourse;
 import static com.ironhack.ironschool.methods.LookupStudent.lookupStudent;
 import static com.ironhack.ironschool.methods.LookupTeacher.lookupTeacher;
 import static com.ironhack.ironschool.methods.ShowProfit.showProfit;
+import static com.ironhack.ironschool.submenus.SubMenuCourses.subMenuCourses;
+import static com.ironhack.ironschool.submenus.SubMenuStudents.subMenuStudents;
+import static com.ironhack.ironschool.submenus.SubMenuTeachers.subMenuTeachers;
 
 
 public class Commands {
@@ -41,19 +44,34 @@ public class Commands {
                 case "3" -> courseMap.forEach((key, value) -> System.out.println(value.getName()));
 
                 // LOOKUP COURSE
-                case "4" -> lookupCourse(courseMap);
+                case "4" -> {
+                    System.out.println("Introduce la ID del curso que deseas buscar: ");
+                    subMenuCourses(courseMap);
+                    String courseId = scanner.nextLine();
+                    System.out.println(lookupCourse(courseMap, courseId));
+                }
 
                 // SHOW STUDENTS
                 case "5" -> studentMap.forEach((key, value) -> System.out.println(value.getName()));
 
                 // LOOKUP STUDENT
-                case "6" -> lookupStudent(studentMap);
+                case "6" -> {
+                    System.out.println("Introduce la ID del estudiante que deseas buscar: ");
+                    subMenuStudents(studentMap);
+                    String studentId = scanner.nextLine();
+                    System.out.println(lookupStudent(studentMap, studentId));
+                }
 
                 // SHOW TEACHERS
                 case "7" -> teachersMap.forEach((key, value) -> System.out.println(value.getName()));
 
                 // LOOKUP TEACHER
-                case "8" -> lookupTeacher(teachersMap);
+                case "8" -> {
+                    System.out.println("Introduce la ID del profesor que deseas buscar: ");
+                    subMenuTeachers(teachersMap);
+                    String teacherId = scanner.nextLine();
+                    System.out.println(lookupTeacher(teachersMap, teacherId));
+                }
 
                 // SHOW PROFIT
                 case "9" -> showProfit(courseMap, teachersMap);

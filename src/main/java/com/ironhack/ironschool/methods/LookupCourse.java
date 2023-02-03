@@ -1,23 +1,27 @@
 package com.ironhack.ironschool.methods;
 
 import com.ironhack.ironschool.clases.Course;
-
 import java.util.Map;
-import java.util.Scanner;
+
 
 public class LookupCourse {
-    public static void lookupCourse(Map<String, Course> courseMap){
+    public static Course lookupCourse(Map<String, Course> courseMap, String courseId) {
 
-        Scanner scanner = new Scanner(System.in);
+        Course foundCourse = null;
 
-        System.out.println("Introduce la ID del curso: ");
-        courseMap.forEach((key, value) -> System.out.println(value.getCourseId()));
-        String courseId = scanner.nextLine();
-
-        courseMap.forEach((key, value) -> {
-            if (value.getCourseId().equals(courseId)) {
-                System.out.println(value);
+            if (courseMap == null) {
+                throw new IllegalArgumentException("No hay cursos registrados");
             }
-        });
+            for (Map.Entry<String, Course> entry : courseMap.entrySet()) {
+                Course currentCourse = entry.getValue();
+                if (currentCourse.getCourseId().equals(courseId)) {
+                    foundCourse = currentCourse;
+                    break;
+                }
+            }
+            if (foundCourse == null) {
+                System.out.println("El curso especificado no existe");
+            }
+        return foundCourse;
     }
 }

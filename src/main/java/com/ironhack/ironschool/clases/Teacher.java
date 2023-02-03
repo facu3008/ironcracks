@@ -12,7 +12,15 @@ public class Teacher {
         this.name = name;
         this.salary = salary;
         this.teacherId = UUID.randomUUID().toString();
+    }
 
+    // Constructor utilizado para Tests
+
+
+    public Teacher(String teacherId, String name, BigDecimal salary) {
+        this.teacherId = teacherId;
+        this.name = name;
+        this.salary = salary;
     }
 
     public String getName() {
