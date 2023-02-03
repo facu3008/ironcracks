@@ -1,7 +1,6 @@
 package com.ironhack.ironschool.utils;
 
 import com.ironhack.ironschool.clases.Student;
-
 import java.util.Map;
 import java.util.Scanner;
 
@@ -24,7 +23,6 @@ public class CreateStudents {
 
             System.out.println("Introduce el email del estudiante " + i + " :");
             String studentEmail  = scanner.nextLine();
-           // System.err.println(studentEmail);
 
             Student student = new Student(studentName,studentAddress,studentEmail);
 

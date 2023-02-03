@@ -2,34 +2,27 @@ package com.ironhack.ironschool.methods;
 
 import com.ironhack.ironschool.clases.Course;
 import com.ironhack.ironschool.clases.Teacher;
-
 import java.util.Map;
-import java.util.Scanner;
+
 
 public class Assign {
 
-    public static void assign(Map<String , Teacher> teachersMap, Map<String, Course> courseMap){
+    public static void assign(Map<String , Teacher> teachersMap, Map<String, Course> courseMap, String iDTeacher, String iDCourse){
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Introduce el id del teacher: ");
-        teachersMap.forEach((key,value) -> System.out.println("Professor Id: " + value.getTeacherId()));
-        String iDTeacher = scanner.nextLine();
-
-        System.out.println("Introduce el id del curso: ");
-        courseMap.forEach((key,value) -> System.out.println("Curso Id: " + value.getCourseId()));
-        String iDCourse = scanner.nextLine();
-
-        courseMap.forEach((courseKey, courseValue) -> {
+        if (courseMap == null || teachersMap == null) {
+            throw new NullPointerException("No hay registros suficientes");
+        }
+        for (Map.Entry<String, Course> courseEntry : courseMap.entrySet()) {
+            Course courseValue = courseEntry.getValue();
             if (courseValue.getCourseId().equals(iDCourse)) {
-                teachersMap.forEach((teacherKey, teacherValue) -> {
+                for (Map.Entry<String, Teacher> teacherEntry : teachersMap.entrySet()) {
+                    Teacher teacherValue = teacherEntry.getValue();
                     if (teacherValue.getTeacherId().equals(iDTeacher)) {
                         courseValue.setTeacher(teacherValue);
                         System.out.println(courseValue);
                     }
-                });
+                }
             }
-        });
-
+        }
     }
 }

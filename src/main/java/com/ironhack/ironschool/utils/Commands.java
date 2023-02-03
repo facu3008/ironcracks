@@ -3,7 +3,6 @@ package com.ironhack.ironschool.utils;
 import com.ironhack.ironschool.clases.Course;
 import com.ironhack.ironschool.clases.Student;
 import com.ironhack.ironschool.clases.Teacher;
-
 import java.util.Map;
 import java.util.Scanner;
 
@@ -93,5 +92,3 @@ public class Commands {
         } while (!command.equals("10"));
     }
 }
-
-// IMPLEMENTAR MENU CON LAS OPCIONES, Y UN SUB MENU PARA AQUELLAS OPCIONES QUE PERMITEN LA ELECCION DE ID'S.

@@ -76,18 +76,6 @@ public class Course {
                 ", money_earned=" + money_earned +
                 ", teacher=" + teacher + ".";
     }
-
-
 }
-    //    This class will have:
-//
-//    Variable called courseId of data type string, auto-generated (Private member)
-//    Variable called name of data type string (Private member)
-//    Variable called price of data type double, representing the price of this course (Private member)
-//    Variable called money_earned of data type double, representing the total money earned by this course (Private member)
-//    Nullable variable called teacher of data type Teacher (Private member)
-//    A parameterized constructor that takes name and price
-//    Public Getter functions to access these variables
-//    Public Setter functions to change these variables
-//    Optional attributes are accepted if needed based on the code structure
+
 

@@ -15,8 +15,6 @@ public class Teacher {
     }
 
     // Constructor utilizado para Tests
-
-
     public Teacher(String teacherId, String name, BigDecimal salary) {
         this.teacherId = teacherId;
         this.name = name;
@@ -55,17 +53,4 @@ public class Teacher {
                 ", salary=" + salary +
                 '}';
     }
-
-    //    Teacher class
-//
-//    This class will have:
-//
-//    Variable called teacherId of data type string, auto-generated (Private member)
-//    Variable called name of data type string (Private member)
-//    Variable called salary of data type double, representing the salary of the teacher (Private member)
-//    A parameterized constructor that takes name and salary
-//    Public Getter functions to access these variables
-//    Public Setter functions to change these variables
-
-//    Optional attributes are accepted if needed based on the code structure
 }

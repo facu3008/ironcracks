@@ -1,7 +1,6 @@
 package com.ironhack.ironschool.utils;
 
 import com.ironhack.ironschool.clases.Course;
-
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.Scanner;
