@@ -27,6 +27,7 @@ public class Main {
         CreateStudents.createStudents(studentMap);
 
         insertCommand(teachersMap, studentMap, courseMap);
-    }
+        }
+
 }
 

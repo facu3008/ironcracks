@@ -3,6 +3,7 @@ package com.ironhack.ironschool.utils;
 import com.ironhack.ironschool.clases.Course;
 import com.ironhack.ironschool.clases.Student;
 import com.ironhack.ironschool.clases.Teacher;
+
 import java.util.Map;
 import java.util.Scanner;
 
@@ -24,12 +25,12 @@ public class Commands {
        String command;
       
         do{
-            System.out.println(" Bienvenido al menu de Consultas  Básicas \n" +
+            System.out.println(" Bienvenido al menu de Consultas Básicas \n" +
                     " 1: ENROLL \t\t\t 2: ASSIGN \t\t\t 3: SHOW COURSE \n " +
                     "4: LOOKUP COURSE \t 5: SHOW STUDENTS \t 6: LOOKUP STUDENTS \n " +
                     "7: SHOW TEACHER \t 8: LOOKUP TEACHER \t 9: SHOW PROFIT \n " +
                     "10: EXIT PROGRAM ") ;
-            System.out.println("Por Favor digite la opcion: ");
+            System.out.println("Por Favor digite la opción: ");
             command = scanner.nextLine();
 
             switch (command) {
@@ -38,14 +39,14 @@ public class Commands {
 
                 // ASSIGN
                 case "2" -> {
-                    System.out.println("Introduce el id del teacher: ");
-                    teachersMap.forEach((key,value) -> System.out.println("Professor Id: " + value.getTeacherId()));
+                    System.out.println("Introduce el id del profesor: ");
+                    teachersMap.forEach((key,value) -> System.out.println("Profesor Id: " + value.getTeacherId()));
                     String iDTeacher = scanner.nextLine();
 
                     System.out.println("Introduce el id del curso: ");
                     courseMap.forEach((key,value) -> System.out.println("Curso Id: " + value.getCourseId()));
                     String iDCourse = scanner.nextLine();
-                    assign(teachersMap, courseMap, iDTeacher, iDCourse);
+                    assign(teachersMap, courseMap);
                 }
 
                 // SHOW COURSES
@@ -53,7 +54,7 @@ public class Commands {
 
                 // LOOKUP COURSE
                 case "4" -> {
-                    System.out.println("Introduce la ID del curso que deseas buscar: ");
+                    System.out.println("Los cursos en la base de datos son: ");
                     subMenuCourses(courseMap);
                     String courseId = scanner.nextLine();
                     System.out.println(lookupCourse(courseMap, courseId));
@@ -64,7 +65,7 @@ public class Commands {
 
                 // LOOKUP STUDENT
                 case "6" -> {
-                    System.out.println("Introduce la ID del estudiante que deseas buscar: ");
+                    System.out.println("Los estudiantes en la base de datos son: ");
                     subMenuStudents(studentMap);
                     String studentId = scanner.nextLine();
                     System.out.println(lookupStudent(studentMap, studentId));
@@ -75,7 +76,7 @@ public class Commands {
 
                 // LOOKUP TEACHER
                 case "8" -> {
-                    System.out.println("Introduce la ID del profesor que deseas buscar: ");
+                    System.out.println("Los profesores en la base de datos son: ");
                     subMenuTeachers(teachersMap);
                     String teacherId = scanner.nextLine();
                     System.out.println(lookupTeacher(teachersMap, teacherId));
@@ -87,8 +88,10 @@ public class Commands {
 
                 case "10" -> System.out.println("Consulta Finalizada");
 
-                default -> System.out.println("OPCION INVALIDA");
+                default -> System.out.println("OPCIÓN INVÁLIDA");
             }
         } while (!command.equals("10"));
     }
 }
+
+// IMPLEMENTAR MENU CON LAS OPCIONES, Y UN SUB MENU PARA AQUELLAS OPCIONES QUE PERMITEN LA ELECCION DE ID'S.

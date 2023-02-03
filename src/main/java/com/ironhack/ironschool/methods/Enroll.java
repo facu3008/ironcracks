@@ -4,7 +4,6 @@ import com.ironhack.ironschool.clases.Student;
 import java.util.Map;
 import java.util.Scanner;
 
-
 public class Enroll {
 
     public static void enroll(Map<String , Student> studentMap, Map<String, Course> courseMap){

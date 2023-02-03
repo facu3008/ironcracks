@@ -25,9 +25,9 @@ public class LookupCourseTest {
         testMap = new HashMap<>();
         emptyMap = new HashMap<>();
 
-        course1 = new Course("1", "curso1", new BigDecimal(100), new BigDecimal(1000), null);
+        course1 = new Course("1", "curso1", new BigDecimal(100), new BigDecimal(1000), null, null);
         testMap.put("1", course1);
-        course2 = new Course("2", "curso2", new BigDecimal(200), new BigDecimal(2000), null);
+        course2 = new Course("2", "curso2", new BigDecimal(200), new BigDecimal(2000), null, null);
         testMap.put("2", course2);
     }
 
