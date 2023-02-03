@@ -1,7 +1,6 @@
 package com.ironhack.ironschool.utils;
 
 import com.ironhack.ironschool.clases.Course;
-
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.Scanner;
@@ -9,14 +8,19 @@ import java.util.Scanner;
 public class CreateCourses {
 
     public static void createCourses(Map<String, Course> courseMap) {
-        System.out.println("Cuantos cursos quieres dar en la escuela? ");
-        Scanner scanner = new Scanner (System.in);
-        int courseQuant  = scanner.nextInt();
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("¿Cuántos cursos se imparten en la escuela? ");
+        int courseQuant = scanner.nextInt();
         scanner.nextLine();
-        for (int i = 0; i<courseQuant; i++ ){
-            System.out.println("Introduce el nombre del curso: ");
+
+        for (int i = 1; i <= courseQuant; i++ ){
+
+            System.out.println("Introduce el nombre del curso " + i + " :");
             String courseName  = scanner.nextLine();
-            System.out.println("Introduce el precio del curso: ");
+
+            System.out.println("Introduce el precio del curso " + i + " :");
             BigDecimal coursePrice = scanner.nextBigDecimal();
             scanner.nextLine();
 
@@ -24,5 +28,4 @@ public class CreateCourses {
             courseMap.put(course.getCourseId(), course);
         }
     }
-
 }

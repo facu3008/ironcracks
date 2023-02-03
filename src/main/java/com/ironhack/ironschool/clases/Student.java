@@ -18,7 +18,15 @@ public class Student {
         this.name = name;
         this.address = address;
         this.email = email;
+    }
 
+    // Constructor utilizado en Tests
+    public Student(String studentId, String name, String address, String email, Course course) {
+        this.studentId = studentId;
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.course = course;
     }
 
     public String getName() {
@@ -49,6 +57,14 @@ public class Student {
         this.email = email;
     }
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -59,17 +75,4 @@ public class Student {
                 ", course=" + course +
                 '}';
     }
-
-    //    Variable called studentId of data type string, auto-generated (Private member)
-//    Variable called name of data type string (Private member)
-//    Variable called address of data type string (Private member)
-//    Variable called email of data type string (Private member)
-
-//    Nullable variable called course of data type Course, representing the course this student is enrolled into (Private member)
-//    A parameterized constructor that takes name, address and email
-//    Public Getter functions to access these variables
-//    Public Setter functions to change these variables
-
-
-//    Optional attributes are accepted if needed based on the code structure
 }
