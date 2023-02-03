@@ -38,7 +38,16 @@ public class Commands {
                 case "1" -> enroll(studentMap, courseMap);
 
                 // ASSIGN
-                case "2" -> assign(teachersMap, courseMap);
+                case "2" -> {
+                    System.out.println("Introduce el id del teacher: ");
+                    teachersMap.forEach((key,value) -> System.out.println("Professor Id: " + value.getTeacherId()));
+                    String iDTeacher = scanner.nextLine();
+
+                    System.out.println("Introduce el id del curso: ");
+                    courseMap.forEach((key,value) -> System.out.println("Curso Id: " + value.getCourseId()));
+                    String iDCourse = scanner.nextLine();
+                    assign(teachersMap, courseMap, iDTeacher, iDCourse);
+                }
 
                 // SHOW COURSES
                 case "3" -> courseMap.forEach((key, value) -> System.out.println(value.getName()));

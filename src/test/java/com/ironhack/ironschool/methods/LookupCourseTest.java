@@ -1,14 +1,12 @@
 package com.ironhack.ironschool.methods;
 
 import com.ironhack.ironschool.clases.Course;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-
 import static com.ironhack.ironschool.methods.LookupCourse.lookupCourse;
 import static org.junit.Assert.*;
 
@@ -16,17 +14,16 @@ import static org.junit.Assert.*;
 public class LookupCourseTest {
 
     private LookupCourse lookupCourse = new LookupCourse();
-    private Map<String, Course> testMap = new HashMap<>();
+    private Map<String, Course> testMap;
     private Map<String, Course> emptyMap;
     private Course course1, course2;
 
 
 
-    @BeforeEach
-    void setUp() {
-
-        emptyMap = new HashMap<>();
+    @Before
+    public void setUp() {
         testMap = new HashMap<>();
+        emptyMap = new HashMap<>();
 
         course1 = new Course("1", "curso1", new BigDecimal(100), new BigDecimal(1000), null);
         testMap.put("1", course1);
@@ -35,8 +32,8 @@ public class LookupCourseTest {
     }
 
 
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() {
         emptyMap.clear();
         testMap.clear();
     }

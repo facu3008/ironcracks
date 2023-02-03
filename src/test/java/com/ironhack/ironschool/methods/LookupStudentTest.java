@@ -1,16 +1,11 @@
 package com.ironhack.ironschool.methods;
 
-import com.ironhack.ironschool.clases.Course;
 import com.ironhack.ironschool.clases.Student;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.ironhack.ironschool.methods.LookupCourse.lookupCourse;
 import static com.ironhack.ironschool.methods.LookupStudent.lookupStudent;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -19,14 +14,14 @@ import static org.junit.Assert.assertNull;
 public class LookupStudentTest {
 
     private LookupStudent lookupStudent = new LookupStudent();
-    private Map<String, Student> testMap = new HashMap<>();
+    private Map<String, Student> testMap;
     private Map<String, Student> emptyMap;
     private Student student1, student2;
 
 
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
 
         emptyMap = new HashMap<>();
         testMap = new HashMap<>();
@@ -38,8 +33,8 @@ public class LookupStudentTest {
     }
 
 
-    @AfterEach
-    void tearDown() {
+    @After
+    public void tearDown() {
         emptyMap.clear();
         testMap.clear();
     }
